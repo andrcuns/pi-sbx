@@ -35,10 +35,6 @@
   "packageRules": [
     {
       "groupName": "pi coding agent",
-      "matchManagers": [
-        "npm",
-        "regex"
-      ],
       "matchPackageNames": [
         "@mariozechner/pi-coding-agent"
       ]
