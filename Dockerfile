@@ -25,6 +25,3 @@ USER agent
 # install mise
 ARG MISE_VERSION
 RUN curl https://mise.run | sh && mise --version
-# install pi harness
-ARG PI_VERSION
-RUN npm install -g --ignore-scripts @earendil-works/pi-coding-agent@${PI_VERSION:-latest} && pi --version

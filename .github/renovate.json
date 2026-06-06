@@ -13,21 +13,10 @@
         "^\\.github/workflows/build\\.yml$"
       ],
       "matchStrings": [
-        "MISE_VERSION=(?<currentValue>[^\\s]+)"
+        "\"tag=(?<currentValue>[^\\s]+)\""
       ],
       "depNameTemplate": "jdx/mise",
       "datasourceTemplate": "github-tags"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": [
-        "^\\.github/workflows/build\\.yml$"
-      ],
-      "matchStrings": [
-        "PI_VERSION=(?<currentValue>[\\d\\.]+)"
-      ],
-      "depNameTemplate": "@earendil-works/pi-coding-agent",
-      "datasourceTemplate": "npm"
     }
   ]
 }

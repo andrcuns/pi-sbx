@@ -18,11 +18,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      - name: Set pi-coding-agent version
+      - name: Set mise version
         id: version
         run: |
-          PI_VERSION=0.78.1
-          echo "tag=${PI_VERSION}" >> "$GITHUB_OUTPUT"
+          echo "tag=v2026.6.0" >> "$GITHUB_OUTPUT"
 
       - name: Log in to GitHub Container Registry
         if: github.event_name != 'pull_request'
@@ -47,7 +46,6 @@ jobs:
           load: ${{ github.event_name == 'pull_request' }}
           tags: ghcr.io/andrcuns/pi-sbx:${{ steps.version.outputs.tag }}
           build-args: |
-            MISE_VERSION=v2026.5.10
-            PI_VERSION=${{ steps.version.outputs.tag }}
+            MISE_VERSION=${{ steps.version.outputs.tag }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
