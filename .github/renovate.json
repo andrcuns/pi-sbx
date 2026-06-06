@@ -3,8 +3,6 @@
   "automerge": true,
   "enabledManagers": [
     "custom.regex",
-    "npm",
-    "mise",
     "dockerfile",
     "github-actions"
   ],
@@ -23,21 +21,13 @@
     {
       "customType": "regex",
       "fileMatch": [
-        "(^|/)pi$"
+        "^\\.github/workflows/build\\.yml$"
       ],
       "matchStrings": [
-        "ghcr\\.io/andrcuns/pi-docker:(?<currentValue>[^\\s]+)"
+        "PI_VERSION=(?<currentValue>[\\d\\.]+)"
       ],
-      "depNameTemplate": "@mariozechner/pi-coding-agent",
+      "depNameTemplate": "@earendil-works/pi-coding-agent",
       "datasourceTemplate": "npm"
-    }
-  ],
-  "packageRules": [
-    {
-      "groupName": "pi coding agent",
-      "matchPackageNames": [
-        "@mariozechner/pi-coding-agent"
-      ]
     }
   ]
 }

@@ -1,3 +1,3 @@
-# pi-docker
+# pi-sbx
 
-Thin docker container wrapper around [pi](https://pi.dev/) harness.
+Custom docker sandbox template for [pi](https://pi.dev/) harness with [mise](https://mise.run) preinstalled.
