@@ -3,7 +3,6 @@ kind: agent
 name: pi
 agent:
   image: "ghcr.io/andrcuns/pi-sbx:latest"
-  persistence: persistent
   entrypoint:
     run: [pi]
 
@@ -13,6 +12,6 @@ commands:
       user: "1000"
       description: "Install pi coding harness"
   startup:
-    - command: "mise install"
+    - command: ["mise", "install"]
       user: "1000"
       description: "Install mise project tools"
