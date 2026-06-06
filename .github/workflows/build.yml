@@ -44,8 +44,10 @@ jobs:
           platforms: ${{ github.event_name == 'pull_request' && 'linux/amd64' || 'linux/amd64,linux/arm64' }}
           push: ${{ github.event_name != 'pull_request' }}
           load: ${{ github.event_name == 'pull_request' }}
-          tags: ghcr.io/andrcuns/pi-sbx:${{ steps.version.outputs.tag }}
-          build-args: |
-            MISE_VERSION=${{ steps.version.outputs.tag }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          tags: |
+            ghcr.io/andrcuns/pi-sbx:${{ steps.version.outputs.tag }}
+            ghcr.io/andrcuns/pi-sbx:latest
+          build-args: |
+            MISE_VERSION=${{ steps.version.outputs.tag }}
