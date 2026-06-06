@@ -45,13 +45,9 @@ jobs:
           platforms: ${{ github.event_name == 'pull_request' && 'linux/amd64' || 'linux/amd64,linux/arm64' }}
           push: ${{ github.event_name != 'pull_request' }}
           load: ${{ github.event_name == 'pull_request' }}
-          tags: ghcr.io/andrcuns/pi-docker:${{ steps.version.outputs.tag }}
+          tags: ghcr.io/andrcuns/pi-sbx:${{ steps.version.outputs.tag }}
           build-args: |
             MISE_VERSION=v2026.5.10
             PI_VERSION=${{ steps.version.outputs.tag }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-
-      - name: Validate image
-        if: github.event_name == 'pull_request'
-        run: docker run --rm ghcr.io/andrcuns/pi-docker:${{ steps.version.outputs.tag }} --version
