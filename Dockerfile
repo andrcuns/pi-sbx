@@ -1,4 +1,4 @@
-FROM docker/sandbox-templates:shell-docker@sha256:0e27bc17271bed939f1a6bc8ab7a226f5092add4ff4ddd8664a602e873a971a3
+FROM docker/sandbox-templates:shell-docker@sha256:39cf20eca861ec92747487af6197f6d916f774bdb98245d267dbd8dfd3debb05
 
 USER root
 
